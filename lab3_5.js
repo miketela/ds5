@@ -16,7 +16,3 @@ function sumaPrimos(n) {
     console.log(`La suma de los números primos menores a ${n} es: ${suma}`);
     return suma;
 }
-
-// Ejemplo de uso
-sumaPrimos(7); // La suma de los números primos menores a 7 es: 17
-sumaPrimos(10); // La suma de los números primos menores a 10 es: 17

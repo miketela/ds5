@@ -9,7 +9,3 @@ function esPalindromoDobleBase(num) {
     console.log(`El número ${num} es palíndromo en base 10 y base 2: ${resultado}`);
     return resultado;
 }
-
-// Ejemplo de uso
-esPalindromoDobleBase(585); // El número 585 es palíndromo en base 10 y base 2: true
-esPalindromoDobleBase(10);  // El número 10 no es palíndromo en base 10 y base 2: false
