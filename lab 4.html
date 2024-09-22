@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Invertir texto en tiempo real</title>
+</head>
+<body>
+
+<input type="text" id="inputText" placeholder="Escribe algo...">
+<p>Texto invertido: <span id="reversedText">/</span></p>
+
+<script>
+    var MiModulo = (function() {
+
+
+        function textInvert(text) {
+            var textoInvertido = '';
+            for (var i = text.length - 1; i >= 0; i--) {
+                textoInvertido += text[i];
+            }
+            return textoInvertido;
+        }
+
+
+        function iniciar() {
+            
+            var campoTexto = document.getElementById('inputText');
+            var campoResultado = document.getElementById('reversedText');
+
+            
+            campoTexto.addEventListener('input', function() {
+                var textoIngresado = campoTexto.value;
+                var textoAlReves = invertirTexto(textoIngresado);
+                campoResultado.textContent = textoAlReves;
+            });
+        }
+
+        return {
+            iniciar: iniciar
+        };
+    })();
+
+    // Iniciamos el módulo
+    MiModulo.iniciar();
+</script>
+
+</body>
+</html>
