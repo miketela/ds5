@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Invertir texto en tiempo real con colores dinámicos</title>
+    <!-- Link to Manrope font -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="inputText" placeholder="Escribe algo...">
+<br>
+<label for="colorSelect">Selecciona un color:</label>
+<select id="colorSelect">
+    <option value="black">Negro</option>
+    <option value="red">Rojo</option>
+    <option value="green">Verde</option>
+    <option value="blue">Azul</option>
+    <option value="purple">Morado</option>
+</select>
+
+<p>Texto invertido: <span id="reversedText">/</span></p>
+
+<script>
+    var MyModule = (function() {
+
+        // Function to invert the text
+        function invertText(text) {
+            var invertedText = '';
+            for (var i = text.length - 1; i >= 0; i--) {
+                invertedText += text[i];
+            }
+            return invertedText;
+        }
+
+        function init() {
+            var textField = document.getElementById('inputText');
+            var resultField = document.getElementById('reversedText');
+            var colorSelector = document.getElementById('colorSelect');
+
+            // Event to update the inverted text in real-time
+            textField.addEventListener('input', function() {
+                var enteredText = textField.value;
+                var reversedText = invertText(enteredText);
+                resultField.textContent = reversedText;
+            });
+
+            // Event to change the color of the inverted text
+            colorSelector.addEventListener('change', function() {
+                var selectedColor = colorSelector.value;
+                resultField.style.color = selectedColor;
+            });
+
+            // Set the initial color of the inverted text
+            resultField.style.color = colorSelector.value;
+        }
+
+        return {
+            init: init
+        };
+    })();
+
+    // Initialize the module
+    MyModule.init();
+</script>
+
+</body>
+</html>
