@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Pokémon</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="poke.png" alt="PokeAPI" class="logo">
+        </div>
+        <div class="search-box">
+            <h1>Buscador de Pokémon</h1>
+            <p>Busca desde Pokémones hasta las habilidades de los mismos.</p>
+            <div class="search-form">
+                <label><strong>Buscar</strong></label>
+                <div class="search-input-container">
+                    <input type="text" id="pokemon-name" placeholder="Ingresa el nombre del Pokémon">
+                </div>
+                <div class="button-container">
+                    <button id="clear-button" style="display: none;">Limpiar</button>
+                    <button id="search-button">Buscar</button>                    
+                </div>
+            </div>
+        </div>
+        <div id="pokemon-info" class="pokemon-info" style="display: none;"></div>
+    </div>
+</body>
+</html>
